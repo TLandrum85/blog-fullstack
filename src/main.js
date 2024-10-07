@@ -1,13 +1,12 @@
+import {getPosts} from "./posts.js";
+
 const postsEl = document.querySelector('#posts');
 const API_URL = "https://bijjidesjxhsywmdfczi.supabase.co"
 const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpamppZGVzanhoc3l3bWRmY3ppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NzIyNTYsImV4cCI6MjA0MjM0ODI1Nn0.JsxjgpNBhh-OndUDWIP-K1TUpYbtBClrK_tsUk9nXVA"
 
 
-fetch(`${API_URL}/blog_posts?select=*&apikey=${API_KEY}`)
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(item => showPostsWebView(item))
-    })
+getPosts()
+    .forEach(item=> showPostsWebView(item))
 
 
 function showPostsWebView(item = {}) {
