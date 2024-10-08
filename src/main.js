@@ -22,7 +22,7 @@ function showPostsWebView(item = {}) {
 <div class="card-body">
                         <h3 class="card-title">${item['title']}</h3>
                         <p class="text-gray-600">Published on: ${item['publishedOn']} by ${item['publishedBy']}</p>
-                        <p>${item['content']}</p>
+                        <p>${item['author']}</p>
                         <div class="card-actions justify-end">
                             <button class="btn btn-primary">Read More</button>
                             <button class="btn btn-error" onClick="handleDelete(${item['id']})">delete</button>
