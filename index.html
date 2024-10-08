@@ -9,6 +9,11 @@
 <body>
 <div id="posts_blog"></div>
 
+<script type="module">
+    import {deletePost} from "./posts.js";
+    window.deletePost = deletePost
+</script>
+
 <script>
     // when this function is used,
     // it should accept the ID of the post
@@ -17,7 +22,9 @@
         // for inspiration, see: https://supabase.com/docs/reference/javascript/delete
         // hint: first start with outline how you will solve this problem
 
-        console.log(`deleting ID: ${postId}`);
+        //console.log(`deleting ID: ${postId}`);
+        console.log(deletePost(postId)
+        )
 
     }
 </script>
@@ -37,7 +44,7 @@
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             stroke-width="2"
-                            d="M4 6h16M4 12h8m-8 6h16" />
+                            d="M4 6h16M4 12h8m-8 6h16"/>
                 </svg>
             </div>
             <ul
