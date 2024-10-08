@@ -1,13 +1,15 @@
 import {getPosts} from "./posts.js";
-
-const postsEl = document.querySelector('#posts');
-const API_URL = "https://bijjidesjxhsywmdfczi.supabase.co"
-const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpamppZGVzanhoc3l3bWRmY3ppIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjY3NzIyNTYsImV4cCI6MjA0MjM0ODI1Nn0.JsxjgpNBhh-OndUDWIP-K1TUpYbtBClrK_tsUk9nXVA"
-
+import "./styles.css"
+const postsEl = document.querySelector("#posts_blog");
+console.log(postsEl);
 
 getPosts()
-    .forEach(item=> showPostsWebView(item))
-
+    .then(data => {
+        console.log(data)
+        data.forEach(item => console.log(item));
+        data.forEach(item => showPostsWebView(item))
+        console.log(postsEl);
+    })
 
 function showPostsWebView(item = {}) {
 
@@ -25,5 +27,6 @@ function showPostsWebView(item = {}) {
                 </div>
     `
     postsEl.appendChild(div)
+    console.log(postsEl);
 }
 
